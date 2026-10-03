@@ -1,0 +1,8 @@
+{
+  "name": "Remix G Tec. Technology - E-Commerce \u0026 Office Solutions",
+  "description": "Comprehensive E-Commerce storefront and business management portal for computers, peripherals, printers, scanners, and computerized office equipment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

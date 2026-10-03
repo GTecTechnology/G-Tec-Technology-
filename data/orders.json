@@ -1,0 +1,106 @@
+[
+  {
+    "id": "ord-1790975462913",
+    "orderNumber": "GTEC-2026-3032",
+    "customer": {
+      "fullName": "Mulugeta Belete",
+      "phone": "+251910624518",
+      "address": "Hawassa Commercial Hub, Suite 3B",
+      "city": "Hawassa"
+    },
+    "items": [
+      {
+        "productId": "prod-laptop-01",
+        "name": "G-Tec UltraBook Elite 15",
+        "sku": "GTEC-NB-9420",
+        "price": 145000,
+        "quantity": 1,
+        "image": "/src/assets/images/hero_laptop_ultrabook_1790970197939.jpg"
+      }
+    ],
+    "shippingMethod": "standard",
+    "shippingCost": 0,
+    "paymentMethod": "telebirr",
+    "receiptAttachment": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
+    "receiptFileName": "telebirr_payment_slip.png",
+    "receiptFileSize": "124 KB",
+    "subtotal": 145000,
+    "tax": 21750,
+    "total": 166750,
+    "status": "Confirmed",
+    "createdAt": "2026-10-02T21:11:02.913Z"
+  },
+  {
+    "id": "ord-1790974898063",
+    "orderNumber": "GTEC-2026-8716",
+    "customer": {
+      "fullName": "werwerwer",
+      "companyName": "uirwioiueriuo",
+      "email": "werejwueru@gmail.com",
+      "phone": "nwieuroiuweoeiruwioeeur",
+      "address": "wueoruwioeuroiuoiuoiu",
+      "city": "Hawassa",
+      "postalCode": "",
+      "notes": "uoiuioueiourtuerutuoiu"
+    },
+    "items": [
+      {
+        "productId": "prod-printer-01",
+        "name": "G-Tec ProMulti Laser Office Center X-4500",
+        "sku": "GTEC-PR-4500",
+        "price": 89000,
+        "quantity": 1,
+        "image": "/src/assets/images/hero_office_printer_1790970207762.jpg"
+      }
+    ],
+    "shippingMethod": "standard",
+    "shippingCost": 0,
+    "paymentMethod": "cbe-birr",
+    "subtotal": 89000,
+    "tax": 7120,
+    "total": 96120,
+    "status": "Confirmed",
+    "createdAt": "2026-10-02T21:01:38.063Z"
+  },
+  {
+    "id": "order-init-01",
+    "orderNumber": "GTEC-2026-1042",
+    "customer": {
+      "fullName": "Dawit Tesfaye",
+      "companyName": "Abyssinia Digital Engineering PLC",
+      "email": "dawit@abyssiniadigital.com",
+      "phone": "+251 91 142 8839",
+      "address": "Hawassa Commercial Technology Center",
+      "city": "Hawassa",
+      "postalCode": "1000",
+      "notes": "Deliver to server room receiving dock. Coordinate gate entry."
+    },
+    "items": [
+      {
+        "productId": "prod-laptop-01",
+        "name": "G-Tec UltraBook Elite 15",
+        "sku": "GTEC-NB-9420",
+        "price": 145000,
+        "quantity": 2,
+        "image": "/src/assets/images/hero_laptop_ultrabook_1790970197939.jpg"
+      },
+      {
+        "productId": "prod-printer-01",
+        "name": "G-Tec ProMulti Laser Office Center X-4500",
+        "sku": "GTEC-PR-4500",
+        "price": 89000,
+        "quantity": 1,
+        "image": "/src/assets/images/hero_office_printer_1790970207762.jpg"
+      }
+    ],
+    "shippingMethod": "onsite-installation",
+    "shippingCost": 3500,
+    "paymentMethod": "telebirr",
+    "poNumber": "PO-ADE-2026-09",
+    "subtotal": 379000,
+    "tax": 56850,
+    "total": 439350,
+    "status": "Confirmed",
+    "createdAt": "2026-09-28T09:15:00.000Z"
+  }
+]
