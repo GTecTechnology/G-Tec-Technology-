@@ -565,6 +565,8 @@ const ADMIN_CONFIG_FILE = path.join(DATA_DIR, 'admin-config.json');
 const AUTHORIZED_ADMIN_EMAILS = [
   'dinagtgf01@gmail.com',
   'girmagttdf02@gmail.com',
+  'gtectechnology@gmail.com',
+  'gtectechnology299@gmail.com',
   'ananiaberasut299@gmail.com'
 ];
 
@@ -578,7 +580,7 @@ function getAdminConfig() {
   }
   const defaultConfig = {
     password: 'gtec2026',
-    adminEmail: 'ananiaberasut299@gmail.com',
+    adminEmail: 'gtectechnology@gmail.com',
     resetCodes: {} as Record<string, { code: string; expiresAt: number }>
   };
   fs.writeFileSync(ADMIN_CONFIG_FILE, JSON.stringify(defaultConfig, null, 2), 'utf-8');

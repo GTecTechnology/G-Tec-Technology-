@@ -16,8 +16,8 @@
       // Ensure trailing slash on GitHub Pages repository subpath so assets resolve correctly
       (function() {
         var path = window.location.pathname;
-        if (path === '/G-Tec-Technology-Store') {
-          window.location.replace('/G-Tec-Technology-Store/' + window.location.search + window.location.hash);
+        if (path && path !== '/' && !path.endsWith('/') && !path.includes('.')) {
+          window.location.replace(path + '/' + window.location.search + window.location.hash);
         }
       })();
     </script>

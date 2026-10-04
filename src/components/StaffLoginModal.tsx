@@ -27,6 +27,8 @@ interface StaffLoginModalProps {
 const AUTHORIZED_ADMIN_EMAILS = [
   'dinagtgf01@gmail.com',
   'girmagttdf02@gmail.com',
+  'gtectechnology@gmail.com',
+  'gtectechnology299@gmail.com',
   'ananiaberasut299@gmail.com'
 ];
 

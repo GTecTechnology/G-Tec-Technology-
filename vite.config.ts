@@ -5,12 +5,17 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(({ command }) => {
   // In development, serve from root '/'.
-  // In production builds (GitHub Actions / Pages), use the exact repository path so absolute asset paths never 404.
-  const repoName = process.env.GITHUB_REPOSITORY
-    ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
-    : (process.env.BASE_PATH || '/G-Tec-Technology-Store/');
-
-  const base = command === 'serve' ? '/' : repoName;
+  // In production builds (GitHub Actions / Pages), dynamically use the exact repository name from GITHUB_REPOSITORY.
+  let base = '/';
+  if (command === 'build') {
+    if (process.env.GITHUB_REPOSITORY) {
+      base = `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`;
+    } else if (process.env.BASE_PATH) {
+      base = process.env.BASE_PATH;
+    } else {
+      base = './';
+    }
+  }
 
   return {
     base,

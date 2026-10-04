@@ -369,7 +369,7 @@ export const api = {
   },
 
   async requestAdminReset(email: string): Promise<{ success: boolean; code?: string; message?: string; error?: string }> {
-    const authorized = ['dinagtgf01@gmail.com', 'girmagttdf02@gmail.com', 'ananiaberasut299@gmail.com'];
+    const authorized = ['dinagtgf01@gmail.com', 'girmagttdf02@gmail.com', 'gtectechnology@gmail.com', 'gtectechnology299@gmail.com', 'ananiaberasut299@gmail.com'];
     const normalized = (email || '').toLowerCase().trim();
     if (!authorized.includes(normalized)) {
       return { 
@@ -402,7 +402,7 @@ export const api = {
   },
 
   async resetAdminPassword(email: string, code: string, newPassword: string): Promise<{ success: boolean; message?: string; error?: string }> {
-    const authorized = ['dinagtgf01@gmail.com', 'girmagttdf02@gmail.com', 'ananiaberasut299@gmail.com'];
+    const authorized = ['dinagtgf01@gmail.com', 'girmagttdf02@gmail.com', 'gtectechnology@gmail.com', 'gtectechnology299@gmail.com', 'ananiaberasut299@gmail.com'];
     const normalized = (email || '').toLowerCase().trim();
     if (!authorized.includes(normalized)) {
       return { 

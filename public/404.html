@@ -16,13 +16,13 @@
       // Ensure trailing slash on GitHub Pages repository subpath so assets resolve correctly
       (function() {
         var path = window.location.pathname;
-        if (path === '/G-Tec-Technology-Store') {
-          window.location.replace('/G-Tec-Technology-Store/' + window.location.search + window.location.hash);
+        if (path && path !== '/' && !path.endsWith('/') && !path.includes('.')) {
+          window.location.replace(path + '/' + window.location.search + window.location.hash);
         }
       })();
     </script>
-    <script type="module" crossorigin src="/G-Tec-Technology-Store/assets/index-Or5hDqMn.js"></script>
-    <link rel="stylesheet" crossorigin href="/G-Tec-Technology-Store/assets/index-DEqHSGBS.css">
+    <script type="module" crossorigin src="./assets/index-C15ddwms.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DEqHSGBS.css">
   </head>
   <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-cyan-500 selection:text-white">
     <div id="root">
