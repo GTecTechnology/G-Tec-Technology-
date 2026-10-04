@@ -70,6 +70,14 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
+  try {
+    const loader = document.getElementById('initial-loading-view');
+    if (loader) {
+      loader.remove();
+    }
+  } catch (e) {
+    // Ignore error
+  }
   createRoot(rootElement).render(
     <ErrorBoundary>
       <App />

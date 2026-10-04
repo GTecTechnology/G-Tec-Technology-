@@ -1,7 +1,8 @@
 import { Product, Order, Inquiry, DashboardStats } from '../types';
 import { SEED_PRODUCTS } from '../data/seedProducts';
+import { resolveAssetUrl } from '../utils/resolveAssetUrl';
 
-const defaultProductImage = './assets/images/hero_laptop_ultrabook_1790970197939.jpg';
+const defaultProductImage = resolveAssetUrl('assets/images/hero_laptop_ultrabook_1790970197939.jpg');
 
 const STORAGE_KEY_PRODUCTS = 'gtec_products_cache';
 const STORAGE_KEY_ORDERS = 'gtec_orders_cache';

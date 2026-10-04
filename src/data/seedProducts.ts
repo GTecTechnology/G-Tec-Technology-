@@ -1,10 +1,11 @@
 import { Product } from '../types';
+import { resolveAssetUrl } from '../utils/resolveAssetUrl';
 
-const laptopImg = './assets/images/hero_laptop_ultrabook_1790970197939.jpg';
-const printerImg = './assets/images/hero_office_printer_1790970207762.jpg';
-const workstationImg = './assets/images/hero_desktop_workstation_1790970217678.jpg';
-const scannerImg = './assets/images/hero_scanner_hardware_1790970242091.jpg';
-const conferenceImg = './assets/images/hero_conference_office_1790970228482.jpg';
+const laptopImg = resolveAssetUrl('assets/images/hero_laptop_ultrabook_1790970197939.jpg');
+const printerImg = resolveAssetUrl('assets/images/hero_office_printer_1790970207762.jpg');
+const workstationImg = resolveAssetUrl('assets/images/hero_desktop_workstation_1790970217678.jpg');
+const scannerImg = resolveAssetUrl('assets/images/hero_scanner_hardware_1790970242091.jpg');
+const conferenceImg = resolveAssetUrl('assets/images/hero_conference_office_1790970228482.jpg');
 
 export const SEED_PRODUCTS: Product[] = [
   {

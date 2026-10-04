@@ -17,6 +17,24 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
     </noscript>
     <script>
+      // Global diagnostic handler for script or resource errors
+      window.addEventListener('error', function(event) {
+        var loader = document.getElementById('initial-loading-view');
+        if (loader) {
+          loader.innerHTML = '<div style="background:#0f172a;border:1px solid #f43f5e;border-radius:16px;padding:28px 24px;max-width:440px;margin:20px;text-align:center;box-shadow:0 25px 50px -12px rgba(0,0,0,0.5);">' +
+            '<div style="font-size:32px;margin-bottom:12px;">⚠️</div>' +
+            '<div style="color:#ffffff;font-weight:700;font-size:17px;margin-bottom:6px;">Storefront Initialization Notice</div>' +
+            '<div style="color:#94a3b8;font-size:12px;margin-bottom:18px;line-height:1.5;">' +
+              (event.message || 'A network interruption delayed site scripts.') +
+            '</div>' +
+            '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">' +
+              '<button onclick="location.reload()" style="background:#0284c7;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:12px;font-weight:700;cursor:pointer;">Reload Store</button>' +
+              '<button onclick="try{localStorage.clear()}catch(e){}location.reload()" style="background:#334155;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:12px;font-weight:700;cursor:pointer;">Clear Cache &amp; Reload</button>' +
+            '</div>' +
+          '</div>';
+        }
+      });
+
       // Ensure trailing slash on GitHub Pages repository subpath so assets resolve correctly
       (function() {
         var path = window.location.pathname;
@@ -36,14 +54,15 @@
           <span>Slow network detected. Loading local catalog...</span>
         </div>
         <style>@keyframes spinLoader { to { transform: rotate(360deg); } }</style>
-        <script>
-          setTimeout(function() {
-            var hint = document.getElementById('network-fallback-hint');
-            if (hint) hint.style.display = 'inline-block';
-          }, 2500);
-        </script>
       </div>
     </div>
+    <script>
+      // Fallback timer if slow connection
+      setTimeout(function() {
+        var hint = document.getElementById('network-fallback-hint');
+        if (hint) hint.style.display = 'inline-block';
+      }, 2500);
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
