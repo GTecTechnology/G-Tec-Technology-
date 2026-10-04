@@ -13,9 +13,13 @@ import { WishlistModal } from './components/WishlistModal';
 import { StaffLoginModal } from './components/StaffLoginModal';
 import { FloatingChatButton } from './components/FloatingChatButton';
 import { Footer } from './components/Footer';
-import { AdminPortal } from './components/admin/AdminPortal';
+import { SEED_PRODUCTS } from './data/seedProducts';
 import { Check, ShoppingBag, Heart } from 'lucide-react';
 import { formatETB } from './utils/formatCurrency';
+
+const AdminPortal = React.lazy(() =>
+  import('./components/admin/AdminPortal').then(module => ({ default: module.AdminPortal }))
+);
 
 const CART_STORAGE_KEY = 'gtec_ecommerce_cart';
 const WISHLIST_STORAGE_KEY = 'gtec_ecommerce_wishlist';
@@ -27,9 +31,20 @@ export default function App() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Products & Loading state
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Products & Loading state - Instant local hydration with zero network lag
+  const [products, setProducts] = useState<Product[]>(() => {
+    try {
+      const cached = localStorage.getItem('gtec_products_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (e) {
+      // Fallback
+    }
+    return SEED_PRODUCTS;
+  });
+  const [loading, setLoading] = useState(false);
 
   // Modals & Drawers
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -181,15 +196,24 @@ export default function App() {
   // If Admin View is active, display the company management portal (accessible strictly after authentication)
   if (currentView === 'admin') {
     return (
-      <AdminPortal
-        onBackToStore={() => {
-          setCurrentView('store');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        onProductUpdated={() => {
-          fetchProductList();
-        }}
-      />
+      <React.Suspense
+        fallback={
+          <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-cyan-400 gap-3">
+            <div className="w-8 h-8 border-2 border-cyan-400/30 border-t-cyan-400 rounded-full animate-spin"></div>
+            <span className="text-xs font-semibold text-slate-400">Loading Management Portal...</span>
+          </div>
+        }
+      >
+        <AdminPortal
+          onBackToStore={() => {
+            setCurrentView('store');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onProductUpdated={() => {
+            fetchProductList();
+          }}
+        />
+      </React.Suspense>
     );
   }
 

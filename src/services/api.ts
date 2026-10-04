@@ -30,12 +30,16 @@ export const api = {
   // Products
   async getProducts(params?: { category?: string; search?: string; featured?: boolean }): Promise<Product[]> {
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1200);
+
       const query = new URLSearchParams();
       if (params?.category && params.category !== 'all') query.append('category', params.category);
       if (params?.search) query.append('search', params.search);
       if (params?.featured) query.append('featured', 'true');
 
-      const res = await fetch(`/api/products?${query.toString()}`);
+      const res = await fetch(`/api/products?${query.toString()}`, { signal: controller.signal });
+      clearTimeout(timeoutId);
       if (res.ok) {
         const data = await res.json();
         if (data.success && Array.isArray(data.products)) {
@@ -44,20 +48,23 @@ export const api = {
         }
       }
     } catch (err) {
-      console.warn('Backend API unavailable, using local cache:', err);
+      // Backend API unavailable or timed out; quickly use local cached products
     }
     return getLocalProducts();
   },
 
   async getProductById(id: string): Promise<Product | null> {
     try {
-      const res = await fetch(`/api/products/${id}`);
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1200);
+      const res = await fetch(`/api/products/${id}`, { signal: controller.signal });
+      clearTimeout(timeoutId);
       if (res.ok) {
         const data = await res.json();
         return data.product || null;
       }
     } catch (err) {
-      console.warn('Failed to fetch product from API:', err);
+      // Ignore network failure and return local product
     }
     const local = getLocalProducts();
     return local.find(p => p.id === id) || null;
