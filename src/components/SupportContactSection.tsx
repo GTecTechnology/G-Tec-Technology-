@@ -102,7 +102,7 @@ export const SupportContactSection: React.FC<SupportContactSectionProps> = ({
                   <span className="text-xs font-bold text-slate-900">Direct Telephone Contacts</span>
                   <div className="text-xs text-slate-600 mt-1 space-y-1">
                     <p>
-                      <strong className="text-slate-800">1. Girma Hirpa:</strong>{' '}
+                      <strong className="text-slate-800">Sales &amp; Tech Line 1:</strong>{' '}
                       <a href="tel:+251910624518" className="font-mono text-[#0072BC] font-bold hover:underline">
                         +251 91 062 4518
                       </a>{' '}
@@ -112,7 +112,7 @@ export const SupportContactSection: React.FC<SupportContactSectionProps> = ({
                       </a>
                     </p>
                     <p>
-                      <strong className="text-slate-800">2. Dina Tesema:</strong>{' '}
+                      <strong className="text-slate-800">Customer Support Line 2:</strong>{' '}
                       <a href="tel:+251967418315" className="font-mono text-[#0072BC] font-bold hover:underline">
                         +251 96 741 8315
                       </a>

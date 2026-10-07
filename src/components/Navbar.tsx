@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="flex items-center gap-2 text-slate-200 text-[11px] sm:text-xs">
               <PhoneCall className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
               <span>
-                Girma Hirpa:{' '}
+                Sales &amp; Tech Line 1:{' '}
                 <a href="tel:+251910624518" className="font-mono text-cyan-300 font-semibold hover:underline">
                   +251 91 062 4518
                 </a>{' '}
@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </a>
               </span>
               <span className="text-slate-500">|</span>
-              <span>Dina Tesema: <a href="tel:+251967418315" className="font-mono text-cyan-300 font-semibold hover:underline">+251 96 741 8315</a></span>
+              <span>Customer Care Line 2: <a href="tel:+251967418315" className="font-mono text-cyan-300 font-semibold hover:underline">+251 96 741 8315</a></span>
             </div>
           </div>
           <div className="flex items-center gap-3.5 text-[11px] text-slate-300 shrink-0">
@@ -350,9 +350,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             <div className="text-center text-xs text-slate-700 py-1 space-y-1">
-              <p className="font-semibold text-slate-900">Direct Contacts:</p>
+              <p className="font-semibold text-slate-900">Direct Support Lines:</p>
               <p>
-                1. Girma Hirpa:{' '}
+                1. Sales &amp; Technical Support:{' '}
                 <a href="tel:+251910624518" className="font-mono font-bold text-[#0072BC]">
                   +251 91 062 4518
                 </a>{' '}
@@ -361,7 +361,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   0725594518
                 </a>
               </p>
-              <p>2. Dina Tesema: <a href="tel:+251967418315" className="font-mono font-bold text-[#0072BC]">+251 96 741 8315</a></p>
+              <p>2. Customer Inquiries: <a href="tel:+251967418315" className="font-mono font-bold text-[#0072BC]">+251 96 741 8315</a></p>
             </div>
           </div>
         </div>

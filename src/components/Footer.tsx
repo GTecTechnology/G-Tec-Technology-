@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenStaffLogin, onNavigate }) 
             </div>
           </div>
 
-          {/* Column 2: Direct Contact with Girma & Dina */}
+          {/* Column 2: Direct Enterprise Contacts */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
               Ethiopia Headquarters &amp; Contacts
@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenStaffLogin, onNavigate }) 
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
                 <div>
-                  <span className="text-slate-300 font-medium">1. Girma Hirpa: </span>
+                  <span className="text-slate-300 font-medium">Sales &amp; Tech Line 1: </span>
                   <a href="tel:+251910624518" className="font-mono text-cyan-300 font-semibold hover:underline">
                     +251 91 062 4518
                   </a>{' '}
@@ -60,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenStaffLogin, onNavigate }) 
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
                 <div>
-                  <span className="text-slate-300 font-medium">2. Dina Tesema: </span>
+                  <span className="text-slate-300 font-medium">Customer Support Line 2: </span>
                   <a href="tel:+251967418315" className="font-mono text-cyan-300 font-semibold hover:underline">
                     +251 96 741 8315
                   </a>
